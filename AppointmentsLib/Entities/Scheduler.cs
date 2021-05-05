@@ -9,7 +9,7 @@ namespace AppointmentsLib.Entities
      
         #region use_free_minutes_range
 
-        public List<int> FindSharedMinutes(List<Calendar> calendars)
+        public List<int> FindOverlappedMinutes(List<Calendar> calendars)
         {
      
             if (calendars == null || calendars.Count == 0 ) { throw new ArgumentException("Brak kalendarzy do sprawdzenia"); }

@@ -61,7 +61,7 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestFindSharedTime1()
+        public void TestFindOverlappedTime1()
         {
 
             Scheduler scheduler = new Scheduler();
@@ -71,17 +71,17 @@ namespace UnitTestProject1
                 ImportCalendarFromFile(Path.Combine(testFilesPath, "testCalendar2.json"))
             };
 
-            var sharedTimes = scheduler.FindSharedMinutes(calendars).ToActiveHoursList();
+            var OverlappedTimes = scheduler.FindOverlappedMinutes(calendars).ToActiveHoursList();
 
-            string result = File.ReadAllText(Path.Combine(testFilesPath, "resultTestFindSharedTime1.txt"));
-            Assert.AreEqual(result, sharedTimes.ToGroupString());
+            string result = File.ReadAllText(Path.Combine(testFilesPath, "resultTestFindOverlappedTime1.txt"));
+            Assert.AreEqual(result, OverlappedTimes.ToGroupString());
 
 
         }
 
 
         [TestMethod]
-        public void TestFindSharedTime2()
+        public void TestFindOverlappedTime2()
         {
 
             Scheduler scheduler = new Scheduler();
@@ -91,10 +91,10 @@ namespace UnitTestProject1
                 ImportCalendarFromFile(Path.Combine(testFilesPath, "testCalendar4.json"))
             };
 
-            var sharedTimes = scheduler.FindSharedMinutes(calendars).ToActiveHoursList();
+            var OverlappedTimes = scheduler.FindOverlappedMinutes(calendars).ToActiveHoursList();
 
-            string result = File.ReadAllText(Path.Combine(testFilesPath, "resultTestFindSharedTime2.txt"));
-            Assert.AreEqual(result, sharedTimes.ToGroupString());
+            string result = File.ReadAllText(Path.Combine(testFilesPath, "resultTestFindOverlappedTime2.txt"));
+            Assert.AreEqual(result, OverlappedTimes.ToGroupString());
 
 
         }
